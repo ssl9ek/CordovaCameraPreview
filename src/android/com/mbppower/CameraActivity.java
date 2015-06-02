@@ -64,6 +64,7 @@ public class CameraActivity extends Fragment {
 	public String defaultCamera;
 	public boolean tapToTakePicture;
 	public boolean dragEnabled;
+        public boolean flashMode;
 
 	public int width;
 	public int height;
@@ -90,6 +91,7 @@ public class CameraActivity extends Fragment {
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
+
 	public void setRect(int x, int y, int width, int height){
 		this.x = x;
 		this.y = y;
@@ -520,6 +522,8 @@ class Preview extends RelativeLayout implements SurfaceHolder.Callback {
         if (mCamera != null) {
             mSupportedPreviewSizes = mCamera.getParameters().getSupportedPreviewSizes();
             setCameraDisplayOrientation();
+	    mParameters.setFlashMode(CameraPreview.flashMode ? Camera.Parameters.FLASH_MODE_TORCH: Camera.Parameters.FLASH_MODE_OFF);
+starstarstar
             //mCamera.getParameters().setRotation(getDisplayOrientation());
             //requestLayout();
         }

@@ -26,6 +26,7 @@ public class CameraPreview extends CordovaPlugin implements CameraActivity.Camer
 	private final String takePictureAction = "takePicture";
 	private final String showCameraAction = "showCamera";
 	private final String hideCameraAction = "hideCamera";
+        public static final Boolean flashMode = false;
 
 	private CameraActivity fragment;
 	private CallbackContext takePictureCallbackContext;
@@ -87,6 +88,7 @@ public class CameraPreview extends CordovaPlugin implements CameraActivity.Camer
 					Boolean tapToTakePicture = args.getBoolean(5);
 					Boolean dragEnabled = args.getBoolean(6);
 					Boolean toBack = args.getBoolean(7);
+					flashMode = args.getBoolean(8);
 
 					fragment.defaultCamera = defaultCamera;
 					fragment.tapToTakePicture = tapToTakePicture;

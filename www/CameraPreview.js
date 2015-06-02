@@ -49,4 +49,8 @@ CameraPreview.disable = function(disable) {
 	exec(null, null, PLUGIN_NAME, "disable", [disable]);
 };
 
+CanvasCamera.setFlashMode = function(flashMode) {
+        exec(null, null, PLUGIN_NAME, "setFlashMode", [flashMode]);
+};
+
 module.exports = CameraPreview;
